@@ -1,0 +1,420 @@
+<section>
+    <header class="text-center">
+        <h1>Formulario de Privacidad</h1>
+        <!-- <p>{{formularioprivacidad.value | json}}</p>  -->
+    </header>
+    <form #formularioprivacidad="ngForm" (ngSubmit)="onSubmit(formularioprivacidad)" novalidate>
+        <fieldset id="forms__input">
+            <div class="card mx-auto" style="width: 60%;">
+                <div class="card-header bg-info p-3">
+                    Introduzca sus datos:
+                </div>
+                <div class="card-body">
+
+                    <div class="mb-3">
+                        <label for="url" class="form-label">URL o página web:</label>
+                        <input type="text" class="form-control" id="url" name="url" placeholder="Ej: www.onstyle.es"
+                            required ngModel #user="ngModel"><span *ngIf="formulario.get('user')?.hasError('required')">Este campo es requerido</span>
+
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label for="nombreUso" class="form-label">Indique la denominación o nombre de uso corriente o
+                            más común del
+                            sitio web:</label>
+                        <input type="text" class="form-control" id="nombreUso" name="nombreUso"
+                            placeholder="Ej: Onstyle Vapeshop" ngModel #user="ngModel">
+                    </div>
+
+                    <label class="form-label">El responsable del fichero de datos personales recogidos de usuarios
+                        es:</label>
+                    <div class="mb-3">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="persona" id="personaFisica"
+                                value="Una persona fisica" ngModel #user="ngModel">
+                            <label class="form-check-label" for="personaFisica">
+                                Una persona fisica
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="persona" id="personaJuridica"
+                                value="Una persona jurídica" ngModel #user="ngModel">
+                            <label class="form-check-label" for="personaJuridica">
+                                Una persona jurídica(Ej: sociedad, asociación)
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="nombreCompleto" class="form-label">Nombre completo del responsable del fichero de
+                            datos
+                            personales recogidos de usuarios:</label>
+                        <input type="text" class="form-control" id="nombreCompleto" name="nombreCompleto"
+                            placeholder="Ej: Lucas Pontes Marques" ngModel #user="ngModel">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="nif" class="form-label">NIF (DNI o NIE) del responsable del fichero de datos
+                            personales
+                            recogidos de usuarios:</label>
+                        <input type="text" class="form-control" id="nif" name="nif" placeholder="Ej: 00000000X" ngModel
+                            #user="ngModel">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="direccion" class="form-label">Direccion completa del responsable del fichero de
+                            datos personales
+                            recogidos de usuarios:</label>
+                        <input type="text" class="form-control" name="direccion" id="direccion"
+                            placeholder="Ej: C/ Cualquiera 20, 15174 - Culleredo, La Coruña" ngModel #user="ngModel">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label">Número de teléfono del responsable del fichero de datos
+                            personales
+                            recogidos de usuarios:</label>
+                        <input type="text" class="form-control" name="telefono" id="telefono"
+                            placeholder="Ej: 981 00 00 00" ngModel #user="ngModel">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="fax" class="form-label">(Opcional) Número de fax del responsable del fichero de
+                            datos personales
+                            recogidos de usuarios:</label>
+                        <input type="text" class="form-control" name="fax" id="fax" placeholder="Ej: 981 11 11 11"
+                            ngModel #user="ngModel">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo electronico del responsable del fichero de datos
+                            personales
+                            recogidos de usuarios:</label>
+                        <input type="email" class="form-control" name="email" id="email"
+                            placeholder="Ej: xxxxxxxxx@xxxx.com" ngModel #user="ngModel">
+                    </div>
+
+                    <label class="form-label">Los datos personales recogidos de usuarios son:</label>
+                    <div class="mb-3">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="tipoDatos" id="" value="identificativos"
+                                ngModel #user="ngModel">
+                            <label class="form-check-label" for="identificativos">
+                                Únicamente datos identificativos (nombre, número de teléfono, correo electrónico, etc.)
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="tipoDatos" id="" value="personales"
+                                ngModel #user="ngModel">
+                            <label class="form-check-label" for="personales">
+                                Datos identificativos y datos personales sensibles o especialmente protegidos (ej:
+                                origen étnico o
+                                racial, opiniones políticas, convicciones religiosas o filosóficas, afiliación sindical,
+                                datos
+                                genéticos, datos biométricos, datos de salud)
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="tiempo" class="form-label">¿Durante cuánto tiempo serán conservados los datos
+                            personales
+                            recogidos de usuarios(en "meses", "años", etc...):</label>
+                        <input type="text" class="form-control" id="tiempo" name="tiempo" placeholder="Ej: 18 meses"
+                            ngModel #user="ngModel">
+                    </div>
+
+                    <label class="form-label">Los datos personales recogidos de usuarios:</label>
+                    <div class="mb-3">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="comparten" value="Si se comparte" ngModel
+                                #user="ngModel">
+                            <label class="form-check-label" for="compartido">
+                                Serán compartidos con otras personas o empresas (Ej: Google, Google Analytics, empresa
+                                que realiza
+                                el servicio de hosting)
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="comparten" value="No se comparte" ngModel
+                                #user="ngModel">
+                            <label class="form-check-label" for="nocompartido">No serán compartidos con otras personas o
+                                empresas.</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="compartidoCon" class="form-label">Nombre completo o denominación solcial y
+                            domicilio completo de la(s) persona(s) o empres(s) con las que serán compartidos los datos
+                            personales
+                            recogidos de usuarios:</label>
+                        <textarea class="form-control" id="compartidoCon" name="compartidoCon" rows="3"
+                            placeholder="Ej: Onstyle Vapeshop, S.L. con domiclio en C/ Emilia Pardon Bazan 2 bajo, 15005 - La Coruña "
+                            ngModel #user="ngModel"></textarea>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="ssl" id="flexCheckDefault" ngModel
+                            #user="ngModel">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Marque la casilla si el sitio web cuenta con un certificado SSL (Secure Socket Layer) que
+                            garantiza que
+                            los datos personales recogidos de usuarios se transmiten de forma secura y confidencial:
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <div class="card mx-auto mt-4" style="width: 20%;">
+            <button type="submit" class="btn btn-outline-info p-3 fs-4 fw-bold">Copiar Política de privacidad</button>
+        </div>
+       
+    </form>
+</section>
+
+
+
+<section>
+    <div class="card mx-auto mt-4" style="width: 60%;">
+        <div class="card-header bg-info p-3">
+            Previsualice su política:
+        </div>
+        <div class="card-body">
+            <h2 class="text-center">POLÍTICA DE PRIVACIDAD DEL SITIO WEB</h2>
+            <p class="text-center">{{formularioprivacidad.value.url }}</p>
+            <h4>I. POLÍTICA DE PRIVACIDAD Y PROTECCIÓN DE DATOS</h4>
+            Respetando lo establecido en la legislación vigente , {{formularioprivacidad.value.url }} (en adelante,
+            también Sitio Web) se compromete a adoptar las medidas técnicas y organizativas necesarias, según el nivel
+            de seguridad adecuado al riesgo de los datos recogidos.
+            <br><br>
+            <h5>Leyes que incorpora esta política de privacidad</h5>
+            Esta política de privacidad está adaptada a la normativa española y europea vigente en materia de protección
+            de datos personales en internet. En concreto, la misma respeta las siguientes normas:
+            <br><br>
+            <ul>
+                <li>
+                    El Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, relativo a
+                    la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la
+                    libre circulación de estos datos (RGPD).
+                </li>
+                <li>
+                    La Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los
+                    derechos digitales (LOPD-GDD).
+                </li>
+                <li>
+                    El Real Decreto 1720/2007, de 21 de diciembre, por el que se aprueba el Reglamento de desarrollo de
+                    la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal (RDLOPD).
+                </li>
+                <li>
+                    La Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio
+                    Electrónico (LSSI-CE).
+
+                </li>
+            </ul>
+            <br>
+            <h5>Identidad del responsable del tratamiento de los datos personales</h5>
+            El responsable del tratamiento de los datos personales recogidos en {{formularioprivacidad.value.url }} es:
+            {{formularioprivacidad.value.nombreCompleto }} , con NIF: {{formularioprivacidad.value.nif }} (en adelante,
+            Responsable del tratamiento). Sus datos de contacto son los siguientes:
+            <br> Dirección: {{formularioprivacidad.value.direccion }}
+            <br> Teléfono de contacto: {{formularioprivacidad.value.telefono }}
+            <br> Email de contacto: {{formularioprivacidad.value.email }}
+            <br><br>
+            <h5>Registro de Datos de Carácter Personal</h5>
+            En cumplimiento de lo establecido en el RGPD y la LOPD-GDD, le informamos que los datos personales recabados
+            por {{formularioprivacidad.value.url }} , mediante los formularios extendidos en sus páginas quedarán
+            incorporados y serán tratados en nuestro fichero con el fin de poder facilitar, agilizar y cumplir los
+            compromisos establecidos entre {{formularioprivacidad.value.nombreUso }} y el Usuario o el mantenimiento de
+            la relación que se establezca en los formularios que este rellene, o para atender una solicitud o consulta
+            del mismo. Asimismo, de conformidad con lo previsto en el RGPD y la LOPD-GDD, salvo que sea de aplicación la
+            excepción prevista en el artículo 30.5 del RGPD, se mantine un registro de actividades de tratamiento que
+            especifica, según sus finalidades, las actividades de tratamiento llevadas a cabo y las demás circunstancias
+            establecidas en el RGPD.
+            <br><br>
+            <h5>Principios aplicables al tratamiento de los datos personales</h5>
+            El tratamiento de los datos personales del Usuario se someterá a los siguientes principios recogidos en el
+            artículo 5 del RGPD y en el artículo 4 y siguientes de la Ley Orgánica 3/2018, de 5 de diciembre, de
+            Protección de Datos Personales y garantía de los derechos digitales:
+            <br><br>
+            <ul>
+                <li>Principio de licitud, lealtad y transparencia: se requerirá en todo momento el consentimiento del
+                    Usuario previa información completamente transparente de los fines para los cuales se recogen los
+                    datos personales.</li>
+                <li>Principio de limitación de la finalidad: los datos personales serán recogidos con fines
+                    determinados, explícitos y legítimos.</li>
+                <li>Principio de minimización de datos: los datos personales recogidos serán únicamente los
+                    estrictamente necesarios en relación con los fines para los que son tratados.</li>
+                <li>Principio de exactitud: los datos personales deben ser exactos y estar siempre actualizados.</li>
+                <li>Principio de limitación del plazo de conservación: los datos personales solo serán mantenidos de
+                    forma que se permita la identificación del Usuario durante el tiempo necesario para los fines de su
+                    tratamiento.</li>
+                <li>Principio de integridad y confidencialidad: los datos personales serán tratados de manera que se
+                    garantice su seguridad y confidencialidad.</li>
+                <li>Principio de responsabilidad proactiva: el Responsable del tratamiento será responsable de asegurar
+                    que los principios anteriores se cumplen.</li>
+            </ul>
+            <br>
+            <h5>Categorías de datos personales</h5>
+            Las categorías de datos que se tratan en {{formularioprivacidad.value.tipoDatos }} son únicamente datos
+            identificativos. En ningún caso, se tratan categorías especiales de datos personales en el sentido del
+            artículo 9 del RGPD.
+            <br><br>
+            <h5>Base legal para el tratamiento de los datos personales</h5>
+            La base legal para el tratamiento de los datos personales es el consentimiento.
+            {{formularioprivacidad.value.nombreUso }} se compromete a recabar el consentimiento expreso y verificable
+            del Usuario para el tratamiento de sus datos personales para uno o varios fines específicos.
+            El Usuario tendrá derecho a retirar su consentimiento en cualquier momento. Será tan fácil retirar el
+            consentimiento como darlo. Como regla general, la retirada del consentimiento no condicionará el uso del
+            Sitio Web.
+            En las ocasiones en las que el Usuario deba o pueda facilitar sus datos a través de formularios para
+            realizar consultas, solicitar información o por motivos relacionados con el contenido del Sitio Web, se le
+            informará en caso de que la cumplimentación de alguno de ellos sea obligatoria debido a que los mismos sean
+            imprescindibles para el correcto desarrollo de la operación realizada.
+            <br><br>
+            <h5>Fines del tratamiento a que se destinan los datos personales</h5>
+            Los datos personales son recabados y gestionados por {{formularioprivacidad.value.nombreUso }} con la
+            finalidad de poder facilitar, agilizar y cumplir los compromisos establecidos entre el Sitio Web y el
+            Usuario o el mantenimiento de la relación que se establezca en los formularios que este último rellene o
+            para atender una solicitud o consulta.
+            Igualmente, los datos podrán ser utilizados con una finalidad comercial de personalización, operativa y
+            estadística, y actividades propias del objeto social de {{formularioprivacidad.value.nombreUso }} , así como
+            para la extracción, almacenamiento de datos y estudios de marketing para adecuar el Contenido ofertado al
+            Usuario, así como mejorar la calidad, funcionamiento y navegación por el Sitio Web.
+            En el momento en que se obtengan los datos personales, se informará al Usuario acerca del fin o fines
+            específicos del tratamiento a que se destinarán los datos personales; es decir, del uso o usos que se dará a
+            la información recopilada.
+            <br><br>
+            <h5>Períodos de retención de los datos personales</h5>
+            Los datos personales solo serán retenidos durante el tiempo mínimo necesario para los fines de su
+            tratamiento y, en todo caso, únicamente durante el siguiente plazo: {{formularioprivacidad.value.tiempo }},
+            o hasta que el Usuario solicite su supresión.
+            En el momento en que se obtengan los datos personales, se informará al Usuario acerca del plazo durante el
+            cual se conservarán los datos personales o, cuando eso no sea posible, los criterios utilizados para
+            determinar este plazo.
+            <br><br>
+            <h5>Destinatarios de los datos personales</h5>
+            Los datos personales del Usuario serán compartidos con los siguientes destinatarios o categorías de
+            destinatarios: {{formularioprivacidad.value.compartidoCon }}
+            En caso de que el Responsable del tratamiento tenga la intención de transferir datos personales a un tercer
+            país u organización internacional, en el momento en que se obtengan los datos personales, se informará al
+            Usuario acerca del tercer país u organización internacional al cual se tiene la intención de transferir los
+            datos, así como de la existencia o ausencia de una decisión de adecuación de la Comisión.
+            <br><br>
+            <h5>Datos personales de menores de edad</h5>
+            Respetando lo establecido en los artículos 8 del RGPD y 7 de la Ley Orgánica 3/2018, de 5 de diciembre, de
+            Protección de Datos Personales y garantía de los derechos digitales, solo los mayores de 14 años podrán
+            otorgar su consentimiento para el tratamiento de sus datos personales de forma lícita por . Si se trata de
+            un menor de 14 años, será necesario el consentimiento de los padres o tutores para el tratamiento, y este
+            solo se considerará lícito en la medida en la que los mismos lo hayan autorizado.
+            <br><br>
+            <h5>Secreto y seguridad de los datos personales</h5>
+            se compromete a adoptar las medidas técnicas y organizativas necesarias, según el nivel de seguridad
+            adecuado al riesgo de los datos recogidos, de forma que se garantice la seguridad de los datos de carácter
+            personal y se evite la destrucción, pérdida o alteración accidental o ilícita de datos personales
+            transmitidos, conservados o tratados de otra forma, o la comunicación o acceso no autorizados a dichos
+            datos.
+            Sin embargo, debido a que {{formularioprivacidad.value.nombreUso }} no puede garantizar la inexpugnabilidad
+            de internet ni la ausencia total de hackers u otros que accedan de modo fraudulento a los datos personales,
+            el Responsable del tratamiento se compromete a comunicar al Usuario sin dilación indebida cuando ocurra una
+            violación de la seguridad de los datos personales que sea probable que entrañe un alto riesgo para los
+            derechos y libertades de las personas físicas. Siguiendo lo establecido en el artículo 4 del RGPD, se
+            entiende por violación de la seguridad de los datos personales toda violación de la seguridad que ocasione
+            la destrucción, pérdida o alteración accidental o ilícita de datos personales transmitidos, conservados o
+            tratados de otra forma, o la comunicación o acceso no autorizados a dichos datos.
+            Los datos personales serán tratados como confidenciales por el Responsable del tratamiento, quien se
+            compromete a informar de y a garantizar por medio de una obligación legal o contractual que dicha
+            confidencialidad sea respetada por sus empleados, asociados, y toda persona a la cual le haga accesible la
+            información.
+            <br><br>
+            <h5>Derechos derivados del tratamiento de los datos personales</h5>
+            El Usuario tiene sobre {{formularioprivacidad.value.tipoDatos }} y podrá, por tanto, ejercer frente al
+            Responsable del tratamiento los siguientes derechos reconocidos en el RGPD y la Ley Orgánica 3/2018, de 5 de
+            diciembre, de Protección de Datos Personales y garantía de los derechos digitales:
+            <br><br>
+            <ul>
+                <li>Derecho de acceso: Es el derecho del Usuario a obtener confirmación de si
+                    {{formularioprivacidad.value.nombreUso }} está tratando o no sus datos personales y, en caso
+                    afirmativo, obtener información sobre sus datos concretos de carácter personal y del tratamiento que
+                    {{formularioprivacidad.value.tipoDatos }} haya realizado o realice, así como, entre otra, de la
+                    información disponible sobre el origen de dichos datos y los destinatarios de las comunicaciones
+                    realizadas o previstas de los mismos.</li>
+                <li>Derecho de rectificación: Es el derecho del Usuario a que se modifiquen sus datos personales que
+                    resulten ser inexactos o, teniendo en cuenta los fines del tratamiento, incompletos.</li>
+                <li>Derecho de supresión ("el derecho al olvido"): Es el derecho del Usuario, siempre que la legislación
+                    vigente no establezca lo contrario, a obtener la supresión de sus datos personales cuando estos ya
+                    no sean necesarios para los fines para los cuales fueron recogidos o tratados; el Usuario haya
+                    retirado su consentimiento al tratamiento y este no cuente con otra base legal; el Usuario se oponga
+                    al tratamiento y no exista otro motivo legítimo para continuar con el mismo; los datos personales
+                    hayan sido tratados ilícitamentemente; los datos personales deban suprimirse en cumplimiento de una
+                    obligación legal; o los datos personales hayan sido obtenidos producto de una oferta directa de
+                    servicios de la sociedad de la información a un menor de 14 años. Además de suprimir los datos, el
+                    Responsable del tratamiento, teniendo en cuenta la tecnología disponible y el coste de su
+                    aplicación, deberá adoptar medidas razonables para informar a los responsables que estén tratando
+                    los datos personales de la solicitud del interesado de supresión de cualquier enlace a esos datos
+                    personales.</li>
+                <li>Derecho a la limitación del tratamiento: Es el derecho del Usuario a limitar el tratamiento de sus
+                    datos personales. El Usuario tiene derecho a obtener la limitación del tratamiento cuando impugne la
+                    exactitud de sus datos personales; el tratamiento sea ilícito; el Responsable del tratamiento ya no
+                    necesite los datos personales, pero el Usuario lo necesite para hacer reclamaciones; y cuando el
+                    Usuario se haya opuesto al tratamiento.</li>
+                <li>Derecho a la portabilidad de los datos: En caso de que el tratamiento se efectúe por medios
+                    automatizados, el Usuario tendrá derecho a recibir del Responsable del tratamiento sus datos
+                    personales en un formato estructurado, de uso común y lectura mecánica, y a transmitirlos a otro
+                    responsable del tratamiento. Siempre que sea técnicamente posible, el Responsable del tratamiento
+                    transmitirá directamente los datos a ese otro responsable.</li>
+                <li>Derecho de oposición: Es el derecho del Usuario a que no se lleve a cabo el tratamiento de sus datos
+                    de carácter personal o se cese el tratamiento de los mismos por parte de .</li>
+                <li>Derecho a no ser objeto de una decisión basada únicamente en el tratamiento automatizado, incluida
+                    la elaboración de perfiles: Es el derecho del Usuario a no ser objeto de una decisión
+                    individualizada basada únicamente en el tratamiento automatizado de sus datos personales, incluida
+                    la elaboración de perfiles, existente salvo que la legislación vigente establezca lo contrario.</li>
+            </ul>
+            Así pues, el Usuario podrá ejercitar sus derechos mediante comunicación escrita dirigida al Responsable del
+            tratamiento con la referencia "RGPD-", especificando:
+            <br><br>
+            <ul>
+                <li>Nombre, apellidos del Usuario y copia del DNI. En los casos en que se admita la representación, será
+                    también necesaria la identificación por el mismo medio de la persona que representa al Usuario, así
+                    como el documento acreditativo de la representación. La fotocopia del DNI podrá ser sustituida, por
+                    cualquier otro medio válido en derecho que acredite la identidad.</li>
+                <li>Petición con los motivos específicos de la solicitud o información a la que se quiere acceder.</li>
+                <li>Domicilio a efecto de notificaciones.</li>
+                <li>Fecha y firma del solicitante.</li>
+                <li>Todo documento que acredite la petición que formula.</li>
+            </ul>
+            Esta solicitud y todo otro documento adjunto podrá enviarse a la siguiente dirección y/o correo electrónico:
+            <br> Dirección postal: {{formularioprivacidad.value.direccion }}
+            <br> Correo electrónico: {{formularioprivacidad.value.email }}
+            <br><br>
+            <h5>Enlaces a sitios web de terceros</h5>
+            El Sitio Web puede incluir hipervínculos o enlaces que permiten acceder a páginas web de terceros distintos
+            de , y que por tanto no son operados por . Los titulares de dichos sitios web dispondrán de sus propias
+            políticas de protección de datos, siendo ellos mismos, en cada caso, responsables de sus propios ficheros y
+            de sus propias prácticas de privacidad.
+            <br><br>
+            <h5>Reclamaciones ante la autoridad de control</h5>
+            En caso de que el Usuario considere que existe un problema o infracción de la normativa vigente en la forma
+            en la que se están tratando sus datos personales, tendrá derecho a la tutela judicial efectiva y a presentar
+            una reclamación ante una autoridad de control, en particular, en el Estado en el que tenga su residencia
+            habitual, lugar de trabajo o lugar de la supuesta infracción. En el caso de España, la autoridad de control
+            es la Agencia Española de Protección de Datos (https://www.aepd.es/).
+            <br><br>
+            <h4>II. ACEPTACIÓN Y CAMBIOS EN ESTA POLÍTICA DE PRIVACIDAD</h4>
+            Es necesario que el Usuario haya leído y esté conforme con las condiciones sobre la protección de datos de
+            carácter personal contenidas en esta Política de Privacidad, así como que acepte el tratamiento de sus datos
+            personales para que el Responsable del tratamiento pueda proceder al mismo en la forma, durante los plazos y
+            para las finalidades indicadas. El uso del Sitio Web implicará la aceptación de la Política de Privacidad
+            del mismo.
+            se reserva el derecho a modificar su Política de Privacidad, de acuerdo a su propio criterio, o motivado por
+            un cambio legislativo, jurisprudencial o doctrinal de la Agencia Española de Protección de Datos. Los
+            cambios o actualizaciones de esta Política de Privacidad no serán notificados de forma explícita al Usuario.
+            Se recomienda al Usuario consultar esta página de forma periódica para estar al tanto de los últimos cambios
+            o actualizaciones.
+            Esta Política de Privacidad fue actualizada para adaptarse al Reglamento (UE) 2016/679 del Parlamento
+            Europeo y del Consejo, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que
+            respecta al tratamiento de datos personales y a la libre circulación de estos datos (RGPD) y a la Ley
+            Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales.
+
+        </div>
+    </div>
+</section>
